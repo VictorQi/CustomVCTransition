@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+
+@import UIKit;
 
 @interface BouncePressentAnimation : NSObject <UIViewControllerAnimatedTransitioning>
 

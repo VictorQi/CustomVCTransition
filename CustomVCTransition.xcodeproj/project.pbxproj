@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		572971991D58835F0030DB61 /* CustomPresentationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 572971981D58835F0030DB61 /* CustomPresentationVC.m */; };
+		57D589821D59C9CB002629D6 /* FLPresentingTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D589801D59C9CB002629D6 /* FLPresentingTransitionAnimator.m */; };
+		57D589921D5C75DB002629D6 /* ViewInstrictSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D589911D5C75DB002629D6 /* ViewInstrictSize.m */; };
 		B689AE2B1D55AE8200601839 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B689AE2A1D55AE8200601839 /* main.m */; };
 		B689AE2E1D55AE8200601839 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B689AE2D1D55AE8200601839 /* AppDelegate.m */; };
 		B689AE311D55AE8200601839 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B689AE301D55AE8200601839 /* ViewController.m */; };
@@ -16,9 +19,19 @@
 		B689AE471D55B36500601839 /* BouncePressentAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = B689AE461D55B36500601839 /* BouncePressentAnimation.m */; };
 		B689AE4A1D55C38D00601839 /* SwipeUpInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = B689AE491D55C38D00601839 /* SwipeUpInteractiveTransition.m */; };
 		B689AE4D1D55CB3A00601839 /* ViewControllerDismissAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = B689AE4C1D55CB3A00601839 /* ViewControllerDismissAnimation.m */; };
+		FDF53BD7429E968DAFE473ED /* libPods-CustomVCTransition.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41E58ED787459A216F1EA1BE /* libPods-CustomVCTransition.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		41E58ED787459A216F1EA1BE /* libPods-CustomVCTransition.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CustomVCTransition.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		572971971D58835F0030DB61 /* CustomPresentationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPresentationVC.h; sourceTree = "<group>"; };
+		572971981D58835F0030DB61 /* CustomPresentationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPresentationVC.m; sourceTree = "<group>"; };
+		57D589801D59C9CB002629D6 /* FLPresentingTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLPresentingTransitionAnimator.m; sourceTree = "<group>"; };
+		57D589811D59C9CB002629D6 /* FLPresentingTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLPresentingTransitionAnimator.h; sourceTree = "<group>"; };
+		57D589901D5C75DB002629D6 /* ViewInstrictSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewInstrictSize.h; sourceTree = "<group>"; };
+		57D589911D5C75DB002629D6 /* ViewInstrictSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewInstrictSize.m; sourceTree = "<group>"; };
+		5E31DB454B17BE08EB50AB0C /* Pods-CustomVCTransition.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomVCTransition.release.xcconfig"; path = "Pods/Target Support Files/Pods-CustomVCTransition/Pods-CustomVCTransition.release.xcconfig"; sourceTree = "<group>"; };
+		70ABBA2035A51FF4CC529FB1 /* Pods-CustomVCTransition.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomVCTransition.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CustomVCTransition/Pods-CustomVCTransition.debug.xcconfig"; sourceTree = "<group>"; };
 		B689AE261D55AE8200601839 /* CustomVCTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomVCTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B689AE2A1D55AE8200601839 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B689AE2C1D55AE8200601839 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -43,17 +56,46 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDF53BD7429E968DAFE473ED /* libPods-CustomVCTransition.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14A7C59ED6F73955E56DE417 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				70ABBA2035A51FF4CC529FB1 /* Pods-CustomVCTransition.debug.xcconfig */,
+				5E31DB454B17BE08EB50AB0C /* Pods-CustomVCTransition.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		57D5898F1D5C75B8002629D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				57D589901D5C75DB002629D6 /* ViewInstrictSize.h */,
+				57D589911D5C75DB002629D6 /* ViewInstrictSize.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		90DF4650C956E390FD6E8C00 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				41E58ED787459A216F1EA1BE /* libPods-CustomVCTransition.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B689AE1D1D55AE8200601839 = {
 			isa = PBXGroup;
 			children = (
 				B689AE281D55AE8200601839 /* CustomVCTransition */,
 				B689AE271D55AE8200601839 /* Products */,
+				14A7C59ED6F73955E56DE417 /* Pods */,
+				90DF4650C956E390FD6E8C00 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +113,7 @@
 				B689AE2C1D55AE8200601839 /* AppDelegate.h */,
 				B689AE2D1D55AE8200601839 /* AppDelegate.m */,
 				B689AE441D55B33900601839 /* Animation */,
+				57D5898F1D5C75B8002629D6 /* View */,
 				B689AE401D55AE9100601839 /* ViewController */,
 				B689AE351D55AE8200601839 /* Assets.xcassets */,
 				B689AE371D55AE8200601839 /* LaunchScreen.storyboard */,
@@ -108,6 +151,10 @@
 				B689AE4C1D55CB3A00601839 /* ViewControllerDismissAnimation.m */,
 				B689AE481D55C38D00601839 /* SwipeUpInteractiveTransition.h */,
 				B689AE491D55C38D00601839 /* SwipeUpInteractiveTransition.m */,
+				572971971D58835F0030DB61 /* CustomPresentationVC.h */,
+				572971981D58835F0030DB61 /* CustomPresentationVC.m */,
+				57D589811D59C9CB002629D6 /* FLPresentingTransitionAnimator.h */,
+				57D589801D59C9CB002629D6 /* FLPresentingTransitionAnimator.m */,
 			);
 			name = Animation;
 			sourceTree = "<group>";
@@ -119,9 +166,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B689AE3D1D55AE8200601839 /* Build configuration list for PBXNativeTarget "CustomVCTransition" */;
 			buildPhases = (
+				9F73ED57DC2C570507CE5F6E /* [CP] Check Pods Manifest.lock */,
 				B689AE221D55AE8200601839 /* Sources */,
 				B689AE231D55AE8200601839 /* Frameworks */,
 				B689AE241D55AE8200601839 /* Resources */,
+				73160B4992192D567E1CCB4D /* [CP] Embed Pods Frameworks */,
+				ED9E4A25C9787A8DEE8723FF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -177,16 +227,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		73160B4992192D567E1CCB4D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CustomVCTransition/Pods-CustomVCTransition-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F73ED57DC2C570507CE5F6E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		ED9E4A25C9787A8DEE8723FF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CustomVCTransition/Pods-CustomVCTransition-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B689AE221D55AE8200601839 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B689AE431D55AEC100601839 /* ModalViewController.m in Sources */,
+				572971991D58835F0030DB61 /* CustomPresentationVC.m in Sources */,
 				B689AE311D55AE8200601839 /* ViewController.m in Sources */,
+				57D589921D5C75DB002629D6 /* ViewInstrictSize.m in Sources */,
 				B689AE471D55B36500601839 /* BouncePressentAnimation.m in Sources */,
 				B689AE2E1D55AE8200601839 /* AppDelegate.m in Sources */,
 				B689AE4D1D55CB3A00601839 /* ViewControllerDismissAnimation.m in Sources */,
+				57D589821D59C9CB002629D6 /* FLPresentingTransitionAnimator.m in Sources */,
 				B689AE2B1D55AE8200601839 /* main.m in Sources */,
 				B689AE4A1D55C38D00601839 /* SwipeUpInteractiveTransition.m in Sources */,
 			);
@@ -290,9 +391,11 @@
 		};
 		B689AE3E1D55AE8200601839 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70ABBA2035A51FF4CC529FB1 /* Pods-CustomVCTransition.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CustomVCTransition/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = v.q.CustomVCTransition;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -301,9 +404,11 @@
 		};
 		B689AE3F1D55AE8200601839 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E31DB454B17BE08EB50AB0C /* Pods-CustomVCTransition.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CustomVCTransition/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = v.q.CustomVCTransition;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -329,6 +434,7 @@
 				B689AE3F1D55AE8200601839 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,12 +7,23 @@
 //
 
 #import "ModalViewController.h"
+#import "CustomPresentationVC.h"
+#import "FLPresentingTransitionAnimator.h"
 
-@interface ModalViewController ()
+@interface ModalViewController () <UIViewControllerTransitioningDelegate>
 
 @end
 
 @implementation ModalViewController
+
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.modalPresentationStyle = UIModalPresentationCustom;
+        self.transitioningDelegate = self;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -20,11 +31,16 @@
     self.view.backgroundColor = [UIColor lightGrayColor];
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    button.frame = CGRectMake(80.0, 210.0, 160.0, 40.0);
     [button setTitle:@"Dismiss me!" forState:UIControlStateNormal];
     [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:button];
+    button.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    NSLayoutConstraint *x = [button.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor];
+    NSLayoutConstraint *y = [button.centerYAnchor constraintEqualToAnchor:self.view.centerYAnchor];
+    
+    [NSLayoutConstraint activateConstraints:@[x, y]];
 }
 
 - (void)buttonClicked:(id)sender {
@@ -39,14 +55,32 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - Custom Transition
+
+- (UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source {
+    if (presented == self) {
+        CustomPresentationVC *myPresentation = [[CustomPresentationVC alloc]
+                                                initWithPresentedViewController:presented presentingViewController:presenting];
+        return myPresentation;
+    } else {
+        return nil;
+    }
 }
-*/
 
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
+    if (presented == self) {
+        return [[FLPresentingTransitionAnimator alloc]initAnimatorWithAppearing:YES];
+    } else {
+        return nil;
+    }
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
+    if (dismissed == self) {
+        return [[FLPresentingTransitionAnimator alloc]initAnimatorWithAppearing:NO];
+    } else {
+        return nil;
+    }
+}
 @end
