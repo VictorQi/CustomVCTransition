@@ -137,10 +137,20 @@ UITextFieldDelegate
 #pragma mark - ModalVC Delegate
 
 - (void)buttonClick:(id)sender {
-    ModalViewController *mvc = [[ModalViewController alloc]init];
-    mvc.delegate = self;
+    [self.niceView setImage:[UIImage imageNamed:@"signInGoogle"]];
+    // 告诉self.view约束需要更新
+    [self.view setNeedsUpdateConstraints];
+    // 调用此方法告诉self.view检测是否需要更新约束，若需要则更新，下面添加动画效果才起作用
+    [self.view updateConstraintsIfNeeded];
     
-    [self presentViewController:mvc animated:YES completion:nil];
+    [UIView animateWithDuration:0.3 animations:^{
+        [self.view layoutIfNeeded];
+    }];
+    
+//    ModalViewController *mvc = [[ModalViewController alloc]init];
+//    mvc.delegate = self;
+//    
+//    [self presentViewController:mvc animated:YES completion:nil];
 }
 
 - (void)modalViewControllerDidclickedDismissButton:(ModalViewController *)viewcontroller {

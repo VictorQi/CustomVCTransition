@@ -34,6 +34,7 @@
             
             [lab mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.top.equalTo(self.mas_top).offset(20);
+                make.bottom.equalTo(self.mas_bottom).offset(-20).priority(749);
                 make.leading.equalTo(self.mas_leading).offset(20);
                 make.trailing.equalTo(self.mas_trailing).offset(-20);
             }];
@@ -47,9 +48,9 @@
             
             [imgv mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.top.equalTo(self.label.mas_baseline).offset(30);
+                make.bottom.equalTo(self.mas_bottom).offset(-30);
                 make.leading.greaterThanOrEqualTo(self.label.mas_leading).offset(20);
                 make.centerX.equalTo(self.mas_centerX);
-                make.bottom.equalTo(self.mas_bottom).offset(-30);
             }];
             
             imgv;
@@ -61,6 +62,16 @@
     return self;
 }
 
+
+- (void)updateConstraints {
+    NSLog(@"update");
+    [super updateConstraints];
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    NSLog(@"layout subviews");
+}
 
 - (void)setImage:(UIImage *)image {
     [self willChangeValueForKey:@"image"];
@@ -74,4 +85,8 @@
     [self didChangeValueForKey:@"text"];
 }
 
+
+- (void)removeImageView {
+    [self.imgView removeFromSuperview];
+}
 @end
